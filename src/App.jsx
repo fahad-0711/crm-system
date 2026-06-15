@@ -12,13 +12,27 @@ function AppContent() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-cyber-bg text-white flex">
+    <div className="min-h-screen text-white flex relative overflow-hidden">
+      {/* Background Video Loop */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="video-background"
+      >
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_102933_4e8f73b5-775a-4179-b2fb-472f59063dcd.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Translucent overlay to maintain text readability */}
+      <div className="video-overlay" />
+
       {/* Fixed Left Sidebar */}
       <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
       
       {/* Main Container */}
       <div 
-        className={`flex-1 flex flex-col min-h-screen transition-all duration-300
+        className={`flex-1 flex flex-col min-h-screen transition-all duration-300 relative z-10
           ${collapsed ? 'pl-20' : 'pl-[260px]'}
         `}
       >
