@@ -47,9 +47,12 @@
 }
 
 @layer base {
-  body {
+  html {
     background-color: #0a0a0f;
-    background-image: radial-gradient(circle at 50% -20%, #15152a 0%, #0a0a0f 70%);
+  }
+
+  body {
+    background-color: transparent;
     color: #ffffff;
     font-family: var(--font-sans);
     min-height: 100vh;
@@ -226,7 +229,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 10, 15, 0.78);
+  background-color: rgba(10, 10, 15, 0.75);
+  background-image: radial-gradient(circle at 50% -20%, rgba(21, 21, 42, 0.75) 0%, rgba(10, 10, 15, 0.9) 70%);
   backdrop-filter: blur(2px);
   z-index: -10;
   pointer-events: none;
